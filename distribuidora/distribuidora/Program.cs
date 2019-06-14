@@ -104,6 +104,7 @@ namespace distribuidora
 							Console.Write("Deseja adicionar outra? (s/n): ");
 							resp = char.Parse(Console.ReadLine());
 						} while (resp != 'n');
+						lv.Add(v);
 						Console.ReadKey();
 						break;
 					case 4:
