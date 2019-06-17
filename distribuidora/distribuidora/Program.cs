@@ -131,6 +131,7 @@ namespace distribuidora
 				Console.ReadKey();
 			}catch{
 				Console.WriteLine("Erro, entrar em contato com o suporte!");
+				Console.ReadKey();
 			}
 		}
 	}
