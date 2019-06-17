@@ -112,7 +112,8 @@ namespace distribuidora
 						Console.WriteLine("Controle de venda!");
 						foreach (venda item in lv)
 						{
-							Console.WriteLine(item.mostra());
+							item.mostra();
+							Console.ReadKey();
 						}
 						Console.ReadKey();
 						break;

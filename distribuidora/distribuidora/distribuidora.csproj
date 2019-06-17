@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="cerveja.cs" />
     <Compile Include="produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tdata.cs" />
+    <Compile Include="venda.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

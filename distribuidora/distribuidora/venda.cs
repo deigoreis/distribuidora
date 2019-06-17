@@ -6,56 +6,57 @@ using System.Threading.Tasks;
 
 namespace distribuidora
 {
-    class venda
-    {
-        private List<cerveja> lc;
-        private int codv;
-        private tdata datavenda;
+	class venda
+	{
+		private List<cerveja> lc;
+		private int codv;
+		private tdata datavenda;
 
-        public int Codv { get => codv; set => codv = value; }
+		public int Codv { get => codv; set => codv = value; }
 
-        public venda()
-        {
-            datavenda = new tdata();
-            lc = new List<cerveja>();
-        }
+		public venda()
+		{
+			datavenda = new tdata();
+			lc = new List<cerveja>();
+		}
 
-        public void addprod(cerveja c)
-        {
-            lc.Add(c);
-        }
+		public void addprod(cerveja c)
+		{
+			lc.Add(c);
+		}
 
-        public string setdatavenda(int d, int m, int a)
-        {
-            string aux = "";
-            if (datavenda.gravar(d, m, a))
-                aux = "data valida";
-            else
-                aux = "data invalida";
+		public string setdatavenda(int d, int m, int a)
+		{
+			string aux = "";
+			if (datavenda.gravar(d, m, a))
+				aux = "data valida";
+			else
+				aux = "data invalida";
 
-            return aux;
-        }
+			return aux;
+		}
 
-        public string getdatavenda()
-        {
+		public string getdatavenda()
+		{
 
-            return datavenda.mostra();
-        }
+			return datavenda.mostra();
+		}
 
-        public string mostra()
-        {
-            int i = 0;
-            string s = " ";
-            s += "Codigo: " + codv + " Data da venda: " + getdatavenda() + " Produtos: ";
-            foreach (cerveja item in lc)
-            {
-                s += i + 1 + "-)" + item + " ";
-                if (item != null)
-                {
-                    s += ", ";
-                }
-            }
-            return s;
-        }
-    }
+		public void mostra()
+		{
+			int i = 0;
+			string s = " ";
+			s += "Codigo: " + codv + " ,Data da venda: " + getdatavenda() + " ,Produtos: ";
+			foreach (cerveja item in lc)
+			{
+				s += i + 1 + "-)" + item.Nome + ", Preco: " + item.Preco.ToString("R$0.00") + " ";
+				if (item != null)
+				{
+					s += ", ";
+				}
+				i++;
+			}
+			Console.WriteLine(s);
+		}
+	}
 }
